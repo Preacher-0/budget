@@ -9,6 +9,14 @@ class Store {
         return this.#transactions;
     }
 
+    addTransaction(title, amount, type, category) {
+       
+        const trans = new Transaction(title, amount, type, category);
+
+        this.#transactions.push(trans);
+        this.saveData();
+    }
+
     //ukladani a nacitani
     saveData() {
         localStorage.setItem("budget_data", JSON.stringify(this.#transactions));
