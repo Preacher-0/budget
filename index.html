@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="app">
+    <header>
+        <h1>Správce Rozpočtu</h1>
+        <div class="balance-container">
+            Aktuální zůstatek: <span id="balance">0 Kč</span>
+        </div>
+    </header>
+
+    <section>
+        <form id="transaction-form" class="form-control">
+            <input type="text" name="title" placeholder="Název (např. Nákup)" required>
+            <input type="number" name="amount" placeholder="Částka" min="1" required>
+            
+            <select name="type">
+                <option value="expense">(-) Výdaj</option>
+                <option value="income">(+) Příjem</option>
+            </select>
+
+            <select name="category">
+                <option value="Jídlo">Jídlo</option>
+                <option value="Bydlení">Bydlení</option>
+                <option value="Doprava">Doprava</option>
+                <option value="Mzda">Mzda</option>
+                <option value="Ostatní">Ostatní</option>
+            </select>
+
+            <button type="submit" class="btn btn-add">Uložit</button>
+        </form>
+    </section>
+
+    <section>
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>Název</th>
+                    <th>Kategorie</th>
+                    <th>Částka</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-list">
+              
+            </tbody>
+        </table>
+    </section>
+
+    <section class="tools">
+        <button id="btn-export" class="btn btn-export">Exportovat CSV</button>
+        <button id="btn-reset" class="btn btn-reset">Nový měsíc (Reset)</button>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* --- PROMĚNNÝ - BARVY --- */
+:root {
+    --primary-color: #2c3e50;
+    --accent-green: #27ae60;
+    --accent-red: #c0392b;
+    --bg-color: #f4f4f4;
+}
+
+* { 
+    box-sizing: border-box; margin: 0; padding: 0; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* --- DASH - ZUSTATEK --- */
+
+header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #eee; 
+}
+h1 { 
+    margin: 0; 
+    color: var(--primary-color); 
+}
+.balance-container { 
+    margin-top: 10px; 
+    font-size: 1.2rem; 
+}
+#balance { 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    display: block; 
+}
+
+.positive { 
+    color: var(--accent-green); 
+}
+.negative { 
+    color: var(--accent-red); 
+}
+
+.form-control { 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+    background: #f9f9f9; 
+    padding: 15px; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+}
+.form-control input, .form-control select { 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    flex: 1; 
+}
+
+.btn { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: opacity 0.3s; 
+}
+
+.btn:hover { 
+    opacity: 0.8; 
+}
+
+.btn-add { 
+    background-color: var(--primary-color); 
+    color: white; 
+    flex: 0 0 100px; 
+}
+
+.btn-delete { 
+    background-color: #e74c3c; 
+    color: white; 
+    padding: 5px 10px; 
+    font-size: 0.8rem; 
+}
+
+.btn-export { 
+    background-color: #2980b9; 
+    color: white; 
+}
+
+.btn-reset { 
+    background-color: #95a5a6; 
+    color: white; 
+}
+
+/* --- TABULKA --- */
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 20px; 
+}
+
+th, td { 
+    text-align: left; 
+    padding: 12px; 
+    border-bottom: 1px solid #ddd; 
+}
+
+th { 
+    background-color: #f8f9fa; 
+}
+
+/* --- SEZNAM --- */
+
+.item-income { 
+    border-left: 5px solid var(--accent-green); 
+}
+
+.item-expense { 
+    border-left: 5px solid var(--accent-red); 
+}
+
+.amount-income { 
+    color: var(--accent-green); 
+    font-weight: bold; 
+}
+
+.amount-expense { 
+    color: var(--accent-red); 
+    font-weight: bold; 
+}
+
+/* --- EXPORTY N SHT --- */
+
+.tools { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 10px; 
+    margin-top: 20px; 
+    padding-top: 20px; 
+    border-top: 1px solid #eee; 
+}
+
+@media (max-width: 600px) {
+    .form-control { 
+        flex-direction: column; 
+    }
+
+    .btn-add { 
+        flex: 1; 
+    }
+}
