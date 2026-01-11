@@ -17,6 +17,18 @@ class Store {
         this.saveData();
     }
 
+    //mazacka jednotlive polozky
+    removeTransaction(id) {
+        this.#transactions = this.#transactions.filter(t => t.id != id);
+        this.saveData();
+    }
+
+    //maazcka vseho existovani
+    resetData() {
+        this.#transactions = [];
+        this.saveData();
+    }
+
     //ukladani a nacitani
     saveData() {
         localStorage.setItem("budget_data", JSON.stringify(this.#transactions));

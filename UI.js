@@ -89,4 +89,28 @@ class UI {
             }
         });
     }
+
+    //mazani jednotlivych polozke
+    bindDeleteBtns(handler) {
+        //hledani tlacitek co maji tridu btn-delete
+        const deleteButtons = this.#listContainer.querySelectorAll('.btn-delete');
+        
+        //event listener na kazde tlacitko
+        deleteButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                //volani handlera s id talcitka
+                handler(btn.dataset.id);
+            });
+        });
+    }
+
+    //export cudlik
+    bindExportBtn(handler) {
+        this.#btnExport.addEventListener('click', handler);
+    }
+
+    //komplet mazacka cudlik
+    bindResetBtn(handler) {
+        this.#btnReset.addEventListener('click', handler);
+    }
 }
